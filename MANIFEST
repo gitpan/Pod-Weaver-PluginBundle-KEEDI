@@ -5,7 +5,6 @@ MANIFEST
 META.yml
 Makefile.PL
 README
-README.mkdn
 dist.ini
 lib/Pod/Weaver/PluginBundle/KEEDI.pm
 t/release-pod-coverage.t

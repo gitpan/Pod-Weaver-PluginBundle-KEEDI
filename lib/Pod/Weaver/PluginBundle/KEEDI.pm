@@ -1,6 +1,6 @@
 package Pod::Weaver::PluginBundle::KEEDI;
 {
-  $Pod::Weaver::PluginBundle::KEEDI::VERSION = '0.001';
+  $Pod::Weaver::PluginBundle::KEEDI::VERSION = '0.003';
 }
 # ABSTRACT: document your modules like KEEDI does 
 
@@ -38,13 +38,14 @@ sub mvp_bundle_config {
         [ '@KEEDI/ACK',          _exp('Generic'),      { header => 'ACKNOWLEDGEMENTS' } ],
         [ '@KEEDI/Legal',        _exp('Legal'),        {} ],
 
-        [ '-Encoding',           _exp('-Encoding'),    { encoding => 'utf-8' } ],
+        [ '@KEEDI/List',         _exp('-Transformer'), { transformer => 'List'  } ],
+        [ '-Encoding',           _exp('-Encoding'),    { encoding    => 'utf-8' } ],
     )
 }
 
 1;
 
-
+__END__
 
 =pod
 
@@ -56,7 +57,7 @@ Pod::Weaver::PluginBundle::KEEDI - document your modules like KEEDI does
 
 =head1 VERSION
 
-version 0.001
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -75,7 +76,7 @@ This is the L<Pod::Weaver> config I use for building my documentation.
 
 =head1 OVERVIEW
 
-This plugin bundle is equivalent to the following weaver.ini file:
+This plugin bundle is equivalent to the following C<weaver.ini> file:
 
   [@CorePrep]
 
@@ -103,18 +104,31 @@ This plugin bundle is equivalent to the following weaver.ini file:
   [Generic / ACKNOWLEDGEMENTS]
   [Legal]
 
+  [-Transformer]
+  transformer = List
+
   [-Encoding]
   encoding = utf-8
 
 =head1 SEE ALSO
 
-=over
+=over 4
 
-=item L<Dist::Zilla>
+=item *
 
-=item L<Pod::Weaver>
+L<Dist::Zilla>
 
-=item L<Pod::Weaver::PluginBundle::Default>
+=item *
+
+L<Pod::Weaver>
+
+=item *
+
+L<Pod::Weaver::PluginBundle::Default>
+
+=item *
+
+L<Pod::Elemental::Transformer::List>
 
 =back
 
@@ -124,12 +138,9 @@ Keedi Kim - 김도형 <keedi@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Keedi Kim.
+This software is copyright (c) 2013 by Keedi Kim.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-
-__END__

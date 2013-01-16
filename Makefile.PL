@@ -21,11 +21,9 @@ my %WriteMakefileArgs = (
   "NAME" => "Pod::Weaver::PluginBundle::KEEDI",
   "PREREQ_PM" => {
     "Pod::Weaver::Config::Assembler" => 0,
-    "namespace::autoclean" => 0,
-    "strict" => 0,
-    "warnings" => 0
+    "namespace::autoclean" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }
